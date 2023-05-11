@@ -17,7 +17,7 @@ function startChangeColor() {
     refs.body.style.backgroundColor = randomColor;
   }, DELAY_TIME);
   refs.btnStart.disabled = true;
-  refs.btnStart.disabled = false;
+  refs.btnStop.disabled = false;
 }
 
 function stopChangeColor() {
