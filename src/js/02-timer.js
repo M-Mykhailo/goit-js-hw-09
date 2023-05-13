@@ -13,6 +13,7 @@ const refs = {
 };
 
 refs.btnSrartTimer.disabled = true;
+refs.dateTimePicker.disabled = false;
 const TIME_OUT = 3000;
 const DELAY_TIME = 1000;
 let timerId = null;
@@ -69,9 +70,11 @@ function startTimer() {
     const nowDate = new Date();
     const dateDifference = selectedDate - nowDate;
     refs.btnSrartTimer.disabled = true;
+    refs.dateTimePicker.disabled = true;
 
     if (dateDifference <= 0) {
       clearInterval(timerId);
+      refs.dateTimePicker.disabled = false;
       Notiflix.Report.success('Congratulations', 'The time has come', 'Ok');
       return;
     } else {
